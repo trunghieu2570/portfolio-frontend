@@ -5,6 +5,7 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
+    `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -14,6 +15,18 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
+    {
+      resolve: "gatsby-source-strapi",
+      options: {
+        apiURL: "http://localhost:1337",
+        contentTypes: [
+          // List of the Content Types you want to be able to request from Gatsby.
+          "post",
+          "user",
+        ],
+        queryLimit: 1000,
+      },
+    },
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
