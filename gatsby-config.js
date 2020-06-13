@@ -40,6 +40,48 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
+    {
+      resolve: `gatsby-source-github-api`,
+      options: {
+        // url: API URL to use. Defaults to  https://api.github.com/graphql
+        
+        graphQLQuery: `
+        query {
+          viewer {
+            name
+            avatarUrl
+            isHireable
+            resourcePath
+            repositories(last: 5, privacy: PUBLIC, orderBy: { field: STARGAZERS, direction:ASC } ) {
+              nodes {
+                name
+                description
+                homepageUrl
+                forkCount
+                createdAt
+                updatedAt
+                resourcePath
+                languages(last: 1, orderBy: { field: SIZE, direction:ASC } ) {
+                  edges {
+                    node {
+                      name
+                      color
+                    }
+                  }
+                }
+                licenseInfo {
+                  name
+                }
+                stargazers {
+                  totalCount
+                }
+              }
+            }
+          }
+        }
+        `
+      }
+    }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

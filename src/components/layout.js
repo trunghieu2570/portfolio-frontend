@@ -10,7 +10,7 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 import "./layout.scss"
-import 'bootstrap/dist/css/bootstrap.css';
+//import 'bootstrap/dist/css/bootstrap.css';
 import SideNav from "./sideNav"
 
 const Layout = ({ children }) => {
@@ -27,12 +27,8 @@ const Layout = ({ children }) => {
   return (
     <>
       <SideNav />
-
-      <div
-        className="main-wrapper"
-      >
-
-        <main>{children}</main>
+      <div className="main-wrapper">
+        {children}
         <footer>
           © {new Date().getFullYear()}, Built with
           {` `}
