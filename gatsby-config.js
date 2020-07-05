@@ -45,6 +45,7 @@ module.exports = {
       options: {
         // url: API URL to use. Defaults to  https://api.github.com/graphql
         token: "77ca6616157aa79e71c52dcfcc035c91d8a1bf20",
+        
         graphQLQuery: `
         query {
           viewer {

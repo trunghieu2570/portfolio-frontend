@@ -1,9 +1,11 @@
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
+import GitHubCard from "./github-card";
 
 const GithubRepoList = () => (
-  <StaticQuery
-    query={graphql`
+  <div className="card-deck">
+    <StaticQuery
+      query={graphql`
       {
         githubData {
           data {
@@ -40,8 +42,11 @@ const GithubRepoList = () => (
         }
       }
     `}
-    render={data => <pre>{JSON.stringify(data, null, 4)}</pre>}
-  ></StaticQuery>
+      render={data => data.githubData.data.viewer.repositories.nodes.map(item => <GitHubCard item={item} />)
+      }
+    ></StaticQuery>
+  </div>
+
 )
 
 export default GithubRepoList;

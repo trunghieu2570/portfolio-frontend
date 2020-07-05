@@ -11,22 +11,22 @@ class SideNav extends Component {
                 <p className='sidebar-quote mx-4 my-2'>
                     Hi, my name is Simon Doe and I'm a senior software engineer. Welcome to my personal website!
                 </p>
-                <div className='sidebar-menu my-4 text-left mx-auto'>
-                    <ul>
+                <div className='sidebar-menu my-4 text-left mx-auto '>
+                    <ul className="list-unstyled font-weight-bold">
                         <li className='sidebar-menu-link'>
-                            <Link>About Me</Link>
+                            <Link className="text-white">About Me</Link>
                         </li>
                         <li className='sidebar-menu-link'>
-                            <Link>Portfolio</Link>
+                            <Link className="text-white">Portfolio</Link>
                         </li>
                         <li className='sidebar-menu-link'>
-                            <Link>Resume</Link>
+                            <Link className="text-white">Resume</Link>
                         </li>
                         <li className='sidebar-menu-link'>
-                            <Link>Blog</Link>
+                            <Link className="text-white">Blog</Link>
                         </li>
                         <li className='sidebar-menu-link'>
-                            <Link>Contact</Link>
+                            <Link className="text-white">Contact</Link>
                         </li>
                     </ul>
                 </div>

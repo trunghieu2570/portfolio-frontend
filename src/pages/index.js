@@ -19,7 +19,7 @@ const IndexPage = ({ data }) => (
             <button className='btn btn-primary'>View Resume</button>
           </div>
           <div className='col-4'>
-            <img src={MyImage} />
+            <img className="img-fluid" src={MyImage} />
           </div>
         </div>
 
