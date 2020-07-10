@@ -3,6 +3,24 @@ $theme-colors: (
   "danger": #ff4136
 );
 
+$background-color: #111;
+
+html, body {
+  height: 100%;
+  margin: 0px;
+  background-color: #000;
+  color: #fff;
+}
+
+#___gatsby, #gatsby-focus-wrapper {
+  height: 100%;
+}
+
+/* -----NAVBAR------ */
+nav.bg-dark {
+  background-color: $background-color !important;
+}
+
 /* -----SIDEBAR----- */
 
 .sidebar-wrapper {
@@ -46,23 +64,31 @@ $theme-colors: (
 /* -----MAIN----- */
 
 .main-wrapper {
-  margin-left: 280px;
-  background: #fff;
+  //margin-left: 280px;
+  background-color: $background-color;
+  color: #fff;
+  height: 100%;
 }
 
 /* -----ABOUT----- */
 
-.about-head-section {
-  background-color: #F7F7F7;
-}
-.about-head-section h1.title-heading {
+h1.big-size-title {
+  font-size: 80px;
   font-weight: bold;
 }
 
-.about-main-section h1.title-heading {
-  border-left: 8px solid #007718;
-  padding-left: 20px;
-  font-size: 25px;
+.about-head-section {
+  display: block;
+  background-color: $background-color;
+  color: #fff;
+  height: 100%;
+}
+h1.title-heading {
+  font-weight: bold;
+  font-size: 3rem;
+  text-align: center;
+  margin-top: 50px !important;
+  margin-bottom: 50px !important;
 }
 
 @import '~bootstrap/scss/bootstrap.scss';

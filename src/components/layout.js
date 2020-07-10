@@ -12,9 +12,10 @@ import { useStaticQuery, graphql } from "gatsby"
 import "./layout.scss"
 //import 'bootstrap/dist/css/bootstrap.css';
 import SideNav from "./sideNav"
+import NavBar from "./nav-bar"
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
+	const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
         siteMetadata {
@@ -24,23 +25,24 @@ const Layout = ({ children }) => {
     }
   `)
 
-  return (
-    <>
-      <SideNav />
-      <div className="main-wrapper">
-        {children}
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
-      </div>
-    </>
-  )
+	return (
+		<>
+			{/* <SideNav /> */}
+			<NavBar/>
+			<div className="main-wrapper">
+				{children}
+				<footer>
+					© {new Date().getFullYear()}, Built with
+          			{` `}
+					<a href="https://www.gatsbyjs.org">Gatsby</a>
+				</footer>
+			</div>
+		</>
+	)
 }
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired,
+	children: PropTypes.node.isRequired,
 }
 
 export default Layout
