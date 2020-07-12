@@ -23,6 +23,7 @@ module.exports = {
 					// List of the Content Types you want to be able to request from Gatsby.
 					"post",
 					"user",
+					"project",
 				],
 				queryLimit: 1000,
 			},
@@ -44,7 +45,7 @@ module.exports = {
 			resolve: `gatsby-source-github-api`,
 			options: {
 				// url: API URL to use. Defaults to  https://api.github.com/graphql
-				token: "9bfc69b3628ac68b0fab1186e4585f4165960708",
+				token: "1c8ac07824535d019a511e14475889907c63f3a9",
 				graphQLQuery: `
 				query {
 				viewer {

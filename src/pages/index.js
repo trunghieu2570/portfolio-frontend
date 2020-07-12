@@ -4,6 +4,7 @@ import Layout from "../components/layout"
 import MyImage from '../images/image.jpg';
 import DevImg from '../images/dev.png';
 import GithubRepoList from "../components/github-repo-list";
+import { ProjectCard } from "../components/project-card";
 
 const IndexPage = ({ data }) => (
 	<Layout>
@@ -72,7 +73,7 @@ const IndexPage = ({ data }) => (
 							</ul>
 						</div>
 						<div className="col-6">
-							<img alt="abc" src={DevImg} width="100%" height="100%" style={{objectFit: "contain", overflow:"hidden"}}/>
+							<img alt="abc" src={DevImg} width="100%" height="100%" style={{ objectFit: "contain", overflow: "hidden" }} />
 						</div>
 					</div>
 					<div className="d-flex justify-content-center">
@@ -81,6 +82,19 @@ const IndexPage = ({ data }) => (
 				</div>
 
 
+			</div>
+		</section>
+
+		<section className='about-main-section py-4'>
+			<div className='container'>
+				<div className="mt-2">
+					<h1 className="title-heading">Portfolio</h1>
+					<div className="card-deck">
+						{data.allStrapiProject.edges.map(document => (
+							<ProjectCard key={document.node.id} item={document.node} />
+						))}
+					</div>
+				</div>
 			</div>
 		</section>
 
@@ -121,6 +135,24 @@ export const pageQuery = graphql`
           content
         }
       }
-    }
+	}
+	allStrapiProject {
+		edges {
+		  node {
+			id
+			name
+			description
+			case_study
+			feature_img {
+				publicURL
+				childImageSharp {
+					fluid(maxWidth: 960) {
+					  ...GatsbyImageSharpFluid
+					}
+				  }
+			}
+		  }
+		}
+	  }
   }
 `
