@@ -5,16 +5,20 @@ import MyImage from '../images/image.jpg';
 import DevImg from '../images/dev.png';
 import GithubRepoList from "../components/github-repo-list";
 import { ProjectCard } from "../components/project-card";
+import { PostCard } from "../components/post-card";
+import Img from "gatsby-image";
+import HBackImg from "../images/aerial-photo-of-sky-691901.jpg";
 
 const IndexPage = ({ data }) => (
-	<Layout>
+	<Layout homePage>
 		<section className='about-head-section'>
-			<div className='container py-5 h-100 d-flex justify-content-center'>
+			<Img className="h-background" fluid={data.imgback.childImageSharp.fluid} />
+			<div className='h-content container py-5 h-100 d-flex justify-content-center'>
 				<div className="text-center align-self-center">
 
 					<h1 className="big-size-title">Tran Trung Hieu</h1>
 					<h2>Software Engineer</h2>
-					<button className='btn btn-primary mt-2'>View My Resume</button>
+					<button className='btn btn-primary mt-2'>View Resume</button>
 					{/* <img className="img-fluid" src={MyImage} /> */}
 				</div>
 
@@ -24,7 +28,7 @@ const IndexPage = ({ data }) => (
 		<section className='about-main-section h-100 py-4'>
 			<div className='container h-100 d-flex justify-content-center'>
 				<div className="text-center align-self-center">
-					<h1 className="title-heading">What I Do</h1>
+					<h1 className="title-heading">My Skills</h1>
 					<div className="d-flex justify-content-center">
 						<img src="https://img.icons8.com/color/192/000000/html-5.png" />
 						<img src="https://img.icons8.com/color/192/000000/css3.png" />
@@ -98,28 +102,27 @@ const IndexPage = ({ data }) => (
 			</div>
 		</section>
 
-		<section className='about-main-section py-4'>
+		{/* <section className='about-main-section py-4'>
 			<div className='container'>
 				<div>
 					<h1 className="title-heading">Open Source Projects</h1>
 					<GithubRepoList />
 				</div>
+			</div>
+		</section> */}
+
+		<section className='about-main-section py-4'>
+			<div className='container'>
 				<div className="mt-2">
 					<h1 className="title-heading">Lastest Posts</h1>
-					<ul>
+					<div className="row">
 						{data.allStrapiPost.edges.map(document => (
-							<li key={document.node.id}>
-								<h2>
-									<Link to={`/${document.node.id}`}>{document.node.title}</Link>
-								</h2>
-								<p>{document.node.content}</p>
-							</li>
+							<div key={document.node.id} className="col-12 col-md-4">
+								<PostCard item={document.node} />
+							</div>
 						))}
-					</ul>
+					</div>
 				</div>
-
-
-				<Link to="/page-2/">Go to page 2</Link>
 			</div>
 		</section>
 	</Layout>
@@ -127,12 +130,26 @@ const IndexPage = ({ data }) => (
 export default IndexPage
 export const pageQuery = graphql`
   query IndexQuery {
+	imgback: file(relativePath: {eq: "aerial-photo-of-sky-691901.jpg"}) {
+		childImageSharp {
+			fluid(maxWidth: 960) {
+			  ...GatsbyImageSharpFluid
+			}
+		}
+	  }
     allStrapiPost {
       edges {
         node {
           id
           title
-          content
+		  description
+		  image {
+			childImageSharp {
+				fluid(maxWidth: 960) {
+				  ...GatsbyImageSharpFluid
+				}
+			  }
+		  }
         }
       }
 	}

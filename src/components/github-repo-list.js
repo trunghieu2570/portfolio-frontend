@@ -4,7 +4,7 @@ import GitHubCard from "./github-card";
 
 const GithubRepoList = () => (
   <div className="card-deck">
-    <StaticQuery
+    {/* <StaticQuery
       query={graphql`
       {
         githubData {
@@ -44,7 +44,7 @@ const GithubRepoList = () => (
     `}
       render={data => data.githubData.data.viewer.repositories.nodes.map(item => <GitHubCard item={item} />)
       }
-    ></StaticQuery>
+    ></StaticQuery> */}
   </div>
 
 )

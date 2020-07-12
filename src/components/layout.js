@@ -14,7 +14,7 @@ import "./layout.scss"
 import SideNav from "./sideNav"
 import NavBar from "./nav-bar"
 
-const Layout = ({ children }) => {
+const Layout = (props) => {
 	const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -28,9 +28,9 @@ const Layout = ({ children }) => {
 	return (
 		<>
 			{/* <SideNav /> */}
-			<NavBar/>
+			<NavBar homePage={props.homePage} />
 			<div className="main-wrapper">
-				{children}
+				{props.children}
 				<footer>
 					© {new Date().getFullYear()}, Built with
           			{` `}
