@@ -11,7 +11,7 @@ import HBackImg from "../images/aerial-photo-of-sky-691901.jpg";
 
 const IndexPage = ({ data }) => (
 	<Layout homePage>
-		<section className='about-head-section'>
+		<section id="home" className='about-head-section'>
 			<Img className="h-background" fluid={data.imgback.childImageSharp.fluid} />
 			<div className='h-content container py-5 h-100 d-flex justify-content-center'>
 				<div className="text-center align-self-center">
@@ -25,7 +25,7 @@ const IndexPage = ({ data }) => (
 
 			</div>
 		</section>
-		<section className='about-main-section h-100 py-4'>
+		<section id="resume" className='about-main-section h-100 py-4'>
 			<div className='container h-100 d-flex justify-content-center'>
 				<div className="text-center align-self-center">
 					<h1 className="title-heading">My Skills</h1>
@@ -43,7 +43,7 @@ const IndexPage = ({ data }) => (
 			</div>
 		</section>
 
-		<section className='about-main-section h-100 py-4'>
+		<section id="exp" className='about-main-section h-100 py-4'>
 			<div className='container h-100 d-flex justify-content-center'>
 				<div className="text-center align-self-center w-100">
 					<h1 className="title-heading">My Experiences</h1>
@@ -89,7 +89,7 @@ const IndexPage = ({ data }) => (
 			</div>
 		</section>
 
-		<section className='about-main-section py-4'>
+		<section id="portfolio" className='about-main-section py-4'>
 			<div className='container'>
 				<div className="mt-2">
 					<h1 className="title-heading">Portfolio</h1>
@@ -111,7 +111,7 @@ const IndexPage = ({ data }) => (
 			</div>
 		</section> */}
 
-		<section className='about-main-section py-4'>
+		<section id="posts" className='about-main-section py-4'>
 			<div className='container'>
 				<div className="mt-2">
 					<h1 className="title-heading">Lastest Posts</h1>

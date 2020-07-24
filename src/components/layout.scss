@@ -8,6 +8,10 @@ $theme-colors: (
 $background-color: #fff;
 $text-color: #111;
 
+html {
+  scroll-behavior: smooth;
+}
+
 html, body {
   height: 100%;
   margin: 0px;
