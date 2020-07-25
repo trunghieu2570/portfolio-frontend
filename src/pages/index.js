@@ -5,6 +5,7 @@ import GithubRepoList from "../components/github-repo-list";
 import { ProjectCard } from "../components/project-card";
 import { PostCard } from "../components/post-card";
 import Img from "gatsby-image";
+import Moment from "react-moment";
 
 const IndexPage = ({ data }) => (
 	<Layout homePage>
@@ -49,19 +50,15 @@ const IndexPage = ({ data }) => (
 				</div>
 				<div className="col-12 col-md-8">
 					<div className="timeline">
-
-						<div className="timeline-block">
-							<p className="timeline-title">Học trường Đại học Công nghệ thông tin ĐHQG-TPHCM</p>
-							<p className="timeline-milestone">2020-2021</p>
-							<p className="timeline-content">
-								fgfgsfgdf sgdfsgdfgf gsfgdfsgdf sgdfgfgsf gdfsgdfsgdf gfgsfgdfsgdf sgdfgf gsfgdf sgdfsgdfg fgsfgdfsg dfsgdfg fgsfgdfs gdfsgdf gfgsfgdfsg dfsgdfgf sgdfsgd
-							</p>
-						</div>
-						<div className="timeline-block">
-							<p className="timeline-title">werewrewrewr</p>
-							<p className="timeline-milestone">2020-2021</p>
-							<p className="timeline-content">fgfgsfgdfsgdfsgd</p>
-						</div>
+						{data.allStrapiMilestone.edges.map(document => (
+							<div className="timeline-block">
+								<p className="timeline-title">{document.node.summary}</p>
+								<p className="timeline-milestone">
+									<Moment format="YYYY">{document.node.startDate}</Moment>{" - "}<Moment format="YYYY">{document.node.endDate}</Moment>
+								</p>
+								<p className="timeline-content">{document.node.content}</p>
+							</div>
+						))}
 					</div>
 				</div>
 			</div>
@@ -71,30 +68,18 @@ const IndexPage = ({ data }) => (
 				</div>
 				<div className="col-12 col-md-6">
 					<ul className="list-unstyled w-100">
-						<li className="mb-5">
-							<div className="text-left mb-2">
-								Frontend
+						{data.allStrapiSkill.edges.map(document => (
+							<li className="mb-5">
+								<div className="text-left mb-2">
+									{document.node.name}
 								</div>
-							<div className="progress w-100" style={{ height: "8px" }}>
-								<div className="progress-bar" role="progressbar" style={{ width: "25%" }} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-							</div>
-						</li>
-						<li className="mb-5">
-							<div className="text-left mb-2">
-								Web Backend
+								<div className="progress w-100" style={{ height: "8px" }}>
+									<div className="progress-bar" role="progressbar" style={{ width: `${document.node.percentage}%` }} aria-valuenow={`${document.node.percentage}%`} aria-valuemin="0" aria-valuemax="100"></div>
 								</div>
-							<div className="progress w-100" style={{ height: "8px" }}>
-								<div className="progress-bar" role="progressbar" style={{ width: "50%" }} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-							</div>
-						</li>
-						<li className="mb-5">
-							<div className="text-left mb-2">
-								Mobile App
-								</div>
-							<div className="progress w-100" style={{ height: "8px" }}>
-								<div className="progress-bar" role="progressbar" style={{ width: "80%" }} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-							</div>
-						</li>
+							</li>
+						))}
+
+
 					</ul>
 				</div>
 			</div>
@@ -189,6 +174,26 @@ export const pageQuery = graphql`
 			}
 		  }
 		}
+	}
+	allStrapiMilestone(sort: {order: ASC, fields: startDate}) {
+		edges {
+		  node {
+			id
+			endDate
+			startDate
+			summary
+			content
+		  }
+		}
 	  }
+	allStrapiSkill {
+		edges {
+			node {
+			id
+			name
+			percentage
+			}
+		}
+	}
   }
 `

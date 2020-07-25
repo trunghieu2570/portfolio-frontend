@@ -6,6 +6,7 @@
  */
 
 import React from "react"
+import Img from "gatsby-image";
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
@@ -15,7 +16,7 @@ import "./layout.scss"
 import NavBar from "./nav-bar"
 
 const Layout = (props) => {
-	useStaticQuery(graphql`
+	const q = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
         siteMetadata {

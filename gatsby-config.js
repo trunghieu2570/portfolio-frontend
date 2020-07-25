@@ -24,6 +24,8 @@ module.exports = {
 					"post",
 					"user",
 					"project",
+					"milestone",
+					"skill",
 				],
 				queryLimit: 1000,
 			},
@@ -45,7 +47,7 @@ module.exports = {
 			resolve: `gatsby-source-github-api`,
 			options: {
 				// url: API URL to use. Defaults to  https://api.github.com/graphql
-				token: "20c61c2b5fd0805c5e72bd7bb649a6438877de6f",
+				token: "c599667e4b0a527947bd9765384c2f656d69bfd6",
 				graphQLQuery: `
 				query {
 				viewer {

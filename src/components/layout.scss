@@ -78,8 +78,8 @@ nav.navbar {
 
 .main-wrapper {
 	//margin-left: 280px;
-	margin-top: 72px;
-	background-color: $background-color;
+	margin-top: 75px;
+	background-color: transparent;
 	color: $text-color;
 	height: 100%;
 	font-family: "Roboto", sans-serif;
@@ -215,6 +215,7 @@ h3.resume-title {
 /* --------- post ---------- */
 
 .post {
+	margin-top: 120px;
 	.post-title {
 		font-size: 40px;
 		font-family: "Merriweather", serif;
@@ -228,11 +229,21 @@ h3.resume-title {
 		color: #666;
 		font-size: 20px;
 	}
+	.post-date {
+		margin-top: 15px;
+		padding-left: 1px;
+		font-family: "Inconsolata", monospace;
+		text-transform: uppercase;
+		font-size: 14px;
+		font-weight: bold;
+		color: #999;
+	}
 }
 
 /* --------- post ---------- */
 
 .project {
+	margin-top: 120px;
 	.project-name {
 		font-size: 40px;
 		font-family: "Merriweather", serif;
@@ -311,4 +322,40 @@ footer {
 	&:hover {
 		box-shadow: 0 1px 31px rgba(0, 0, 0, 0.09);
 	}
+}
+
+/* ----------- sidenar ------------- */
+.sidenav {
+	height: 100%;
+	width: 0;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background-color: #111;
+	overflow-x: hidden;
+	transition: 0.5s;
+	text-align: center;
+	padding-top: 80px;
+}
+
+.sidenav a {
+	padding: 8px 8px 8px 32px;
+	text-decoration: none;
+	font-size: 25px;
+	color: #ddd !important;
+	font-family: "Roboto Mono", monospace;
+	font-weight: bold;
+	text-transform: uppercase;
+	display: block;
+	transition: 0.3s;
+}
+
+.sidenav .btn-close {
+	position: absolute;
+	color: #fff;
+	top: 0;
+	right: 25px;
+	font-size: 36px;
+	margin-left: 50px;
 }

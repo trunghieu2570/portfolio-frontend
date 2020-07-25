@@ -10,10 +10,10 @@ const ProjectTemplate = ({ data }) => (
 			<div className="container">
 				<div className="row justify-content-center">
 					<div className="col-md-8">
-						<h1 className="project-name text-center">{data.strapiProject.name}</h1>
-						<p className="project-description my-4">{data.strapiProject.description}</p>
+						<h1 className="project-name text-center mb-5">{data.strapiProject.name}</h1>
+						{/* <p className="project-description my-4">{data.strapiProject.description}</p> */}
 						<Img fluid={data.strapiProject.feature_img.childImageSharp.fluid} />
-						<div className="project-case-study mt-4">
+						<div className="project-case-study my-5">
 							<ReactMarkdown source={data.strapiProject.case_study} />
 						</div>
 					</div>

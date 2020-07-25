@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import { Navbar } from 'react-bootstrap';
+import SideNav from './side-nav';
 
 const NavBar = (props) => {
     const [className, changeClassName] = useState("bg-trans");
+    const [showSideBar, toggleSideBar] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -17,11 +20,16 @@ const NavBar = (props) => {
         }
     }, [className, changeClassName]);
 
+    useEffect(() => {
+
+    }, [showSideBar, toggleSideBar]);
+
     return (
         <div>
+
             <nav className={`navbar fixed-top navbar-expand-lg ${className} navbar-light py-3 px-5`}>
                 <a className="navbar-brand" href="#!">Trung Hieu</a>
-                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <button className="navbar-toggler" type="button" onClick={() => toggleSideBar(true)}>
                     <span className="navbar-toggler-icon"></span>
                 </button>
 
@@ -39,21 +47,17 @@ const NavBar = (props) => {
                         <li className="nav-item dropdown">
                             <a className="nav-link dropdown-toggle" href="/#posts" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Blog
-        </a>
-                            {/* <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                            </div> */}
+                        </a>
                         </li>
                         <li className="nav-item">
                             <a className="nav-link disabled" href="#!">Contact</a>
                         </li>
                     </ul>
                 </div>
-                <div className="nav-link d-none d-md-block">Follow me</div>
+                
+                <SideNav width={showSideBar ? "100%" : "0%"} onClose={() => toggleSideBar(false)} />
             </nav>
+            
         </div>
     );
 }
