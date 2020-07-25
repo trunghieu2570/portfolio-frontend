@@ -32,6 +32,13 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
             id
           }
         }
+	  }
+	  allStrapiProject {
+        edges {
+          node {
+            id
+          }
+        }
       }
     }
     `
@@ -41,6 +48,15 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
 			createPage({
 				path: `/${node.id}`,
 				component: path.resolve(`src/templates/post.js`),
+				context: {
+					id: node.id,
+				},
+			})
+		})
+		result.data.allStrapiProject.edges.forEach(({ node }) => {
+			createPage({
+				path: `/${node.id}`,
+				component: path.resolve(`src/templates/project.js`),
 				context: {
 					id: node.id,
 				},

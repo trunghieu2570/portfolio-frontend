@@ -9,11 +9,11 @@ export const PostCard = (props) => {
     const {
         id,
         title,
-        slug,
+        //slug,
         description,
         image,
-        status,
-        category,
+        //status,
+        //category,
     } = props.item;
     console.log(image);
     return (

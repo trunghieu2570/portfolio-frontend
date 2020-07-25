@@ -11,11 +11,11 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import "./layout.scss"
 //import 'bootstrap/dist/css/bootstrap.css';
-import SideNav from "./sideNav"
+//import SideNav from "./sideNav"
 import NavBar from "./nav-bar"
 
 const Layout = (props) => {
-	const data = useStaticQuery(graphql`
+	useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
         siteMetadata {
@@ -32,11 +32,15 @@ const Layout = (props) => {
 			<div className="main-wrapper">
 				{props.children}
 				<footer>
-					© {new Date().getFullYear()}, Built with
+					<div className="container py-4">
+						© {new Date().getFullYear()}, Built with
           			{` `}
-					<a href="https://www.gatsbyjs.org">Gatsby</a>
+						<a href="https://www.gatsbyjs.org">Gatsby</a>
+					</div>
+
 				</footer>
 			</div>
+
 		</>
 	)
 }

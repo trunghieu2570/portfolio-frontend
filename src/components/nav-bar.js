@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
 
 const NavBar = (props) => {
     const [className, changeClassName] = useState("bg-trans navbar-dark");
@@ -22,12 +21,12 @@ const NavBar = (props) => {
         return () => {
             window.removeEventListener("scroll", handleScroll);
         }
-    }, [className, changeClassName]);
+    }, [className, changeClassName, props.homePage]);
 
     return (
         <div>
             <nav class={`navbar fixed-top navbar-expand-lg ${className} py-3 px-5`}>
-                <a class="navbar-brand" href="#">Trung Hieu</a>
+                <a class="navbar-brand" href="#!">Trung Hieu</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -47,15 +46,15 @@ const NavBar = (props) => {
                             <a class="nav-link dropdown-toggle" href="/#posts" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Blog
         </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            {/* <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="#">Action</a>
                                 <a class="dropdown-item" href="#">Another action</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#">Something else here</a>
-                            </div>
+                            </div> */}
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link disabled" href="#">Contact</a>
+                            <a class="nav-link disabled" href="#!">Contact</a>
                         </li>
                     </ul>
                 </div>

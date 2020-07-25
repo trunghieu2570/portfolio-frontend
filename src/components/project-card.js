@@ -10,24 +10,22 @@ export const ProjectCard = (props) => {
         id,
         name,
         description,
-        case_study,
+        //case_study,
         feature_img,
     } = props.item;
     return (
-        <div className="project-card">
-            <div className="card-wrapper">
+        <div className="row project-card m-0 mb-4">
+            <div className="col-5 px-0">
                 <Img className="card-background" fluid={feature_img.childImageSharp.fluid} />
-                <div className="card-content-wrapper"></div>
-                <div className="card-content d-flex justify-content-center">
-                    <div className="align-self-center text-center">
-                        <h2>
-                            <Link to={`/${id}`}>{name}</Link>
-                        </h2>
-                        <p>{description}</p>
-                        <button className="btn btn-outline-primary">View Case Study</button>
-                    </div>
-                </div>
+            </div>
+            <div className="col-7 card-content">
+                <h3 className="project-title">
+                    <Link to={`/${id}`}>{name}</Link>
+                </h3>
+                <p>{description}</p>
+                <button className="btn btn-sm btn-outline-primary">View Case Study</button>
             </div>
         </div>
+
     )
 }
