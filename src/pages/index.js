@@ -1,9 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
-//import MyImage from '../images/image.jpg';
-import DevImg from '../images/dev.png';
-//import GithubRepoList from "../components/github-repo-list";
+import GithubRepoList from "../components/github-repo-list";
 import { ProjectCard } from "../components/project-card";
 import { PostCard } from "../components/post-card";
 import Img from "gatsby-image";
@@ -12,19 +10,20 @@ const IndexPage = ({ data }) => (
 	<Layout homePage>
 		<section id="home" className='about-head-section'>
 			<Img className="h-background" fluid={data.imgback.childImageSharp.fluid} />
-			<div className='h-content container py-5 h-100 d-flex justify-content-center'>
-				<div className="text-center align-self-center">
+			<div className='h-content container h-100'>
+				<div className="row align-items-center h-100">
+					<div className="col-md-6 col-12">
+						<h1>Hello, I'm Hieu</h1>
+						<p className="h-description">Donec dictum et quam non laoreet. Curabitur malesuada ornare enim, eu tempor urna varius ac. Donec mattis pulvinar porta. Nam elementum tempor convallis</p>
+						<button className="btn btn-primary">Hire Me</button>
+					</div>
+					<div className="col-6">
 
-					<h1 className="big-size-title">Tran Trung Hieu</h1>
-					<h2>Software Engineer</h2>
-					<button className='btn btn-primary mt-2'>View Resume</button>
-					{/* <img className="img-fluid" src={MyImage} /> */}
+					</div>
 				</div>
-
-
 			</div>
 		</section>
-		<section id="resume" className='resume-section container py-4'>
+		<section id="resume" className='resume-section container pt-5'>
 			<div className="row">
 				<div className="col-10">
 					<h2 className="title-heading">Resume</h2>
@@ -45,9 +44,12 @@ const IndexPage = ({ data }) => (
 			</div>
 
 			<div className="row">
-				<div className="col-8">
+				<div className="col-12">
+					<h3 className="resume-title">Education & Employment</h3>
+				</div>
+				<div className="col-12 col-md-8">
 					<div className="timeline">
-						<h3 className="resume-title">Education & Employment</h3>
+
 						<div className="timeline-block">
 							<p className="timeline-title">Học trường Đại học Công nghệ thông tin ĐHQG-TPHCM</p>
 							<p className="timeline-milestone">2020-2021</p>
@@ -67,13 +69,13 @@ const IndexPage = ({ data }) => (
 				<div className="col-12">
 					<h3 className="resume-title">General Skills</h3>
 				</div>
-				<div className="col-6">
+				<div className="col-12 col-md-6">
 					<ul className="list-unstyled w-100">
 						<li className="mb-5">
 							<div className="text-left mb-2">
 								Frontend
 								</div>
-							<div className="progress w-100" style={{ height: "10px" }}>
+							<div className="progress w-100" style={{ height: "8px" }}>
 								<div className="progress-bar" role="progressbar" style={{ width: "25%" }} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
 							</div>
 						</li>
@@ -81,7 +83,7 @@ const IndexPage = ({ data }) => (
 							<div className="text-left mb-2">
 								Web Backend
 								</div>
-							<div className="progress w-100" style={{ height: "10px" }}>
+							<div className="progress w-100" style={{ height: "8px" }}>
 								<div className="progress-bar" role="progressbar" style={{ width: "50%" }} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
 							</div>
 						</li>
@@ -89,30 +91,16 @@ const IndexPage = ({ data }) => (
 							<div className="text-left mb-2">
 								Mobile App
 								</div>
-							<div className="progress w-100" style={{ height: "10px" }}>
+							<div className="progress w-100" style={{ height: "8px" }}>
 								<div className="progress-bar" role="progressbar" style={{ width: "80%" }} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
 							</div>
 						</li>
 					</ul>
 				</div>
-				{/* <div className="col-6 p-5">
-					<img alt="abc" src={DevImg} width="100%" height="100%" style={{ objectFit: "contain", overflow: "hidden" }} />
-				</div> */}
 			</div>
-
-			{/* <div className="text-center align-self-center">
-					<div className="d-flex justify-content-center">
-						<img alt='1' src="https://img.icons8.com/color/192/000000/html-5.png" />
-						<img alt='1' src="https://img.icons8.com/color/192/000000/css3.png" />
-						<img alt='1' src="https://img.icons8.com/color/192/000000/react-native.png" />
-						<img alt='1' src="https://img.icons8.com/color/192/000000/javascript.png" />
-						<img alt='1' src="https://img.icons8.com/color/192/000000/flutter.png" />
-						<img alt='1' src="https://img.icons8.com/color/192/000000/java-coffee-cup-logo.png" />
-					</div>
-				</div> */}
 		</section>
 
-		<section id="portfolio" className='portfolio-section container py-4 mt-2'>
+		<section id="portfolio" className='portfolio-section container pt-5 mt-2'>
 			<div className="row">
 				<div className="col-12">
 					<h2 className="title-heading">Portfolio</h2>
@@ -128,35 +116,39 @@ const IndexPage = ({ data }) => (
 
 		</section>
 
-		{/* <section className='about-main-section py-4'>
-			<div className='container'>
-				<div>
-					<h1 className="title-heading">Open Source Projects</h1>
+		<section className='github-section container pt-4'>
+			<div className="row">
+				<div className="col-12">
+					<h2 className="title-heading">Open Source Projects</h2>
+				</div>
+				<div className="col-12">
 					<GithubRepoList />
 				</div>
-			</div>
-		</section> */}
 
-		<section id="posts" className='about-main-section py-4'>
-			<div className='container'>
-				<div className="mt-2">
-					<h2 className="title-heading">Lastest Posts</h2>
-					<div className="row">
-						{data.allStrapiPost.edges.map(document => (
-							<div key={document.node.id} className="col-12 col-md-4">
-								<PostCard item={document.node} />
-							</div>
-						))}
-					</div>
-				</div>
 			</div>
 		</section>
+
+		<section id="posts" className='post-section container pt-5'>
+			<div className="row">
+				<div className="col-12">
+					<h2 className="title-heading">Lastest Posts</h2>
+				</div>
+				{data.allStrapiPost.edges.map(document => (
+					<div key={document.node.id} className="col-12 col-md-4">
+						<PostCard item={document.node} />
+					</div>
+				))}
+			</div>
+
+
+		</section>
+		<div className="py-5"></div>
 	</Layout >
 )
 export default IndexPage
 export const pageQuery = graphql`
   query IndexQuery {
-	imgback: file(relativePath: {eq: "aerial-photo-of-sky-691901.jpg"}) {
+	imgback: file(relativePath: {eq: "home-shape.png"}) {
 		childImageSharp {
 			fluid(maxWidth: 960) {
 			  ...GatsbyImageSharpFluid
@@ -169,6 +161,7 @@ export const pageQuery = graphql`
           id
           title
 		  description
+		  updatedAt
 		  image {
 			childImageSharp {
 				fluid(maxWidth: 960) {

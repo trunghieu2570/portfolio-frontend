@@ -45,7 +45,7 @@ module.exports = {
 			resolve: `gatsby-source-github-api`,
 			options: {
 				// url: API URL to use. Defaults to  https://api.github.com/graphql
-				token: "1c8ac07824535d019a511e14475889907c63f3a9",
+				token: "20c61c2b5fd0805c5e72bd7bb649a6438877de6f",
 				graphQLQuery: `
 				query {
 				viewer {
