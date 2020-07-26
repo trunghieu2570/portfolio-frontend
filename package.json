@@ -41,7 +41,7 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "deploy": "gatsby build && gh-pages -d public -r https://$GITHUB_TOKEN@github.com/trunghieu2570/trunghieu2570.github.io",
+    "deploy": "gatsby build && gh-pages -d public -r https://$GITHUB_TOKEN@github.com/trunghieu2570/trunghieu2570.github.io -b master",
     "test": "test --passWithNoTests"
   },
   "repository": {
