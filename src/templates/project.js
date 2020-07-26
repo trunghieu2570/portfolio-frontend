@@ -3,9 +3,15 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Img from "gatsby-image";
 import ReactMarkdown from "react-markdown";
+import { Helmet } from "react-helmet";
 
 const ProjectTemplate = ({ data }) => (
 	<Layout>
+		<Helmet>
+			<meta charSet="utf-8" />
+			<title>{data.strapiProject.name}</title>
+			{/* <link rel="canonical" href="http://mysite.com/example" /> */}
+		</Helmet>
 		<div className="project">
 			<div className="container">
 				<div className="row justify-content-center">

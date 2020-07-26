@@ -4,12 +4,17 @@ import Layout from "../components/layout"
 import Img from "gatsby-image";
 import ReactMarkdown from "react-markdown";
 import Moment from "react-moment";
+import { Helmet } from "react-helmet";
 
 const PostTemplate = ({ data }) => (
   <Layout>
-    
+    <Helmet>
+      <meta charSet="utf-8" />
+      <title>{data.strapiPost.title}</title>
+      {/* <link rel="canonical" href="http://mysite.com/example" /> */}
+    </Helmet>
     <div className="post">
-      
+
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-md-8">

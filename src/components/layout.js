@@ -22,7 +22,10 @@ const Layout = (props) => {
         siteMetadata {
           title
         }
-      }
+	  }
+	  strapiConfig {
+		  footer
+	}
     }
   `)
 
@@ -34,9 +37,7 @@ const Layout = (props) => {
 				{props.children}
 				<footer>
 					<div className="container py-4">
-						© {new Date().getFullYear()}, Built with
-          			{` `}
-						<a href="https://www.gatsbyjs.org">Gatsby</a>
+						{q.strapiConfig.footer}
 					</div>
 
 				</footer>

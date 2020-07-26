@@ -14,8 +14,8 @@ const IndexPage = ({ data }) => (
 			<div className='h-content container h-100'>
 				<div className="row align-items-center h-100">
 					<div className="col-md-6 col-12">
-						<h1>Hello, I'm Hieu</h1>
-						<p className="h-description">Donec dictum et quam non laoreet. Curabitur malesuada ornare enim, eu tempor urna varius ac. Donec mattis pulvinar porta. Nam elementum tempor convallis</p>
+						<h1>{data.strapiConfig.greetingTitle}</h1>
+						<p className="h-description">{data.strapiConfig.greetingSubtitle}</p>
 						<button className="btn btn-primary">Hire Me</button>
 					</div>
 					<div className="col-6">
@@ -28,19 +28,7 @@ const IndexPage = ({ data }) => (
 			<div className="row">
 				<div className="col-10">
 					<h2 className="title-heading">Resume</h2>
-					<p className="mb-5">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-						Donec dictum et quam non laoreet.
-						Curabitur malesuada ornare enim, eu tempor urna varius ac.
-						Donec mattis pulvinar porta.
-						Nam elementum tempor convallis.
-						Nunc blandit varius ante.
-						Phasellus sed ante lobortis, laoreet eros a, placerat erat.
-						Nunc egestas nisi at erat ornare, at consectetur enim laoreet.
-						Praesent ut rhoncus dolor. Cras tristique in orci sed fringilla.
-						Proin faucibus facilisis lorem ac blandit. Fusce eget est enim.
-						Cras id elementum diam. Maecenas et eros ac nulla imperdiet euismod non id augue.
-				</p>
+					<p className="mb-5">{data.strapiConfig.resumeDescription}</p>
 				</div>
 			</div>
 
@@ -194,6 +182,11 @@ export const pageQuery = graphql`
 			percentage
 			}
 		}
+	}
+	strapiConfig {
+		greetingSubtitle
+		greetingTitle
+		resumeDescription
 	}
   }
 `
