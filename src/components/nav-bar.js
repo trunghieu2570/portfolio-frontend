@@ -28,14 +28,14 @@ const NavBar = (props) => {
         <div>
 
             <nav className={`navbar fixed-top navbar-expand-lg ${className} navbar-light py-3 px-5`}>
-                <a className="navbar-brand" href="#!">Trung Hieu</a>
+                <a className="navbar-brand" href="/">Trung Hieu</a>
                 <button className="navbar-toggler" type="button" onClick={() => toggleSideBar(true)}>
                     <span className="navbar-toggler-icon"></span>
                 </button>
 
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav mr-auto">
-                        <li className="nav-item active">
+                        <li className="nav-item">
                             <a className="nav-link" href="/#home">Home <span className="sr-only">(current)</span></a>
                         </li>
                         <li className="nav-item">
@@ -50,7 +50,7 @@ const NavBar = (props) => {
                         </a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link disabled" href="#!">Contact</a>
+                            <a className="nav-link" href="/#contact">Contact</a>
                         </li>
                     </ul>
                 </div>

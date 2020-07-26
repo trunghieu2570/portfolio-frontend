@@ -23,7 +23,7 @@ export const ProjectCard = (props) => {
                     <Link to={`/${id}`}>{name}</Link>
                 </h3>
                 <p>{description}</p>
-                <button className="btn btn-sm btn-outline-primary">View Case Study</button>
+                <Link to={`/${id}`} className="btn btn-sm btn-outline-primary">View Case Study</Link>
             </div>
         </div>
 

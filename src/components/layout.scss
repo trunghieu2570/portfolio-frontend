@@ -221,9 +221,8 @@ h3.resume-title {
 		font-family: "Merriweather", serif;
 	}
 	.post-content {
-		font-size: 18px;
+		font-size: 20px;
 		font-family: "Noto Serif", serif;
-		font-weight: 200;
 	}
 	.post-description {
 		color: #666;
@@ -245,13 +244,13 @@ h3.resume-title {
 .project {
 	margin-top: 120px;
 	.project-name {
-		font-size: 40px;
-		font-family: "Merriweather", serif;
+		font-size: 32px;
+		font-family: "Roboto Mono", monospace;
+		font-weight: bold;
 	}
 	.project-case-study {
-		font-size: 18px;
-		font-family: "Noto Serif", serif;
-		font-weight: 200;
+		font-size: 20px;
+		font-family: "Roboto", sans-serif;
 	}
 	.project-description {
 		color: #666;
@@ -358,4 +357,11 @@ footer {
 	right: 25px;
 	font-size: 36px;
 	margin-left: 50px;
+}
+
+/*-------- contact -----------*/
+.contact {
+	.form-control {
+		font-size: unset !important;
+	}
 }

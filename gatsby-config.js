@@ -47,6 +47,12 @@ module.exports = {
 			},
 		},
 		{
+			resolve: `gatsby-plugin-disqus`,
+			options: {
+				shortname: `trunghieu-portfolio`
+			}
+		},
+		{
 			resolve: `gatsby-source-github-api`,
 			options: {
 				// url: API URL to use. Defaults to  https://api.github.com/graphql

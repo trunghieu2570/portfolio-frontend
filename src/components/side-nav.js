@@ -12,7 +12,7 @@ const SideNav = (props) => {
                 <a onClick={props.onClose} href="/#posts" >
                     Blog
                                 </a>
-                <a onClick={props.onClose} href="#!">Contact</a>
+                <a onClick={props.onClose} href="/#contact">Contact</a>
 
             </div>
         </>

@@ -15,11 +15,11 @@ const ProjectTemplate = ({ data }) => (
 		<div className="project">
 			<div className="container">
 				<div className="row justify-content-center">
-					<div className="col-md-8">
-						<h1 className="project-name text-center mb-5">{data.strapiProject.name}</h1>
+					<div className="col-12 col-sm-12 col-lg-8 col-md-10">
+						<Img className="mb-5" fluid={data.strapiProject.feature_img.childImageSharp.fluid} />
+						<h1 className="project-name text-center">{data.strapiProject.name}</h1>
 						{/* <p className="project-description my-4">{data.strapiProject.description}</p> */}
-						<Img fluid={data.strapiProject.feature_img.childImageSharp.fluid} />
-						<div className="project-case-study my-5">
+						<div className="project-case-study mt-3 mb-5">
 							<ReactMarkdown source={data.strapiProject.case_study} />
 						</div>
 					</div>

@@ -26,7 +26,7 @@ const IndexPage = ({ data }) => (
 		</section>
 		<section id="resume" className='resume-section container pt-5'>
 			<div className="row">
-				<div className="col-10">
+				<div className="col-12 col-md-10">
 					<h2 className="title-heading">Resume</h2>
 					<p className="mb-5">{data.strapiConfig.resumeDescription}</p>
 				</div>
@@ -115,7 +115,34 @@ const IndexPage = ({ data }) => (
 
 
 		</section>
-		<div className="py-5"></div>
+		<section id="contact" className='contact container pt-5'>
+			<div className="text-center">
+				<form method="post">
+					<div className="row justify-content-center">
+						<div className="col-md-8">
+							<h2 className="title-heading"><span>Contact</span></h2>
+							<div className="form-group">
+								<input type="text" name="txtName" className="form-control" placeholder="Your Name *" value="" />
+							</div>
+							<div className="form-group">
+								<input type="text" name="txtEmail" className="form-control" placeholder="Your Email *" value="" />
+							</div>
+
+
+							<div className="form-group">
+								<textarea name="txtMsg" className="form-control" placeholder="Your Message *" style={{ width: "100%", height: "150px" }} />
+							</div>
+							<div className="form-group">
+								<input type="submit" className="btn btn-primary" value="Send Message" />
+							</div>
+						</div>
+
+					</div>
+				</form>
+			</div>
+
+		</section>
+		<div className="py-3"></div>
 	</Layout >
 )
 export default IndexPage
