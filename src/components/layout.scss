@@ -245,7 +245,6 @@ h3.resume-title {
 	margin-top: 120px;
 	.project-name {
 		font-size: 32px;
-		font-family: "Roboto Mono", monospace;
 		font-weight: bold;
 	}
 	.project-case-study {
@@ -287,8 +286,6 @@ $timeline-bullet-thickness: 3px;
 		}
 		.timeline-milestone {
 			font-family: "Inconsolata", monospace;
-		}
-		.timeline-content {
 		}
 	}
 }
