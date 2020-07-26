@@ -18,8 +18,19 @@ const GitHubCard = props => {
 
             </div>
             <div className="card-footer">
-                <span className='github-lang-icon' style={{ backgroundColor: `${languages.edges[0].node.color}` }} />
-                <span className="pl-1">{languages.edges[0].node.name}</span>
+                {
+                    languages.edges.length > 0 ?
+                        <>
+                            <span className='github-lang-icon' style={{ backgroundColor: `${languages.edges[0].node.color}` }} />
+                            <span className="pl-1">{languages.edges[0].node.name}</span>
+                        </>
+                        :
+                        <>
+                            <span className='github-lang-icon' style={{ backgroundColor: "#0f0" }} />
+                            <span className="pl-1">Github</span>
+                        </>
+                }
+
             </div>
         </div>
     );

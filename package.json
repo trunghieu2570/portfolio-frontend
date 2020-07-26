@@ -17,6 +17,7 @@
     "gatsby-source-github-api": "^0.2.1",
     "gatsby-source-strapi": "0.0.12",
     "gatsby-transformer-sharp": "^2.5.2",
+    "gh-pages": "^3.1.0",
     "node-sass": "^4.14.1",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
@@ -40,6 +41,7 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
+    "deploy": "gatsby build && gh-pages -d public -r https://$GITHUB_TOKEN@github.com/trunghieu2570/trunghieu2570.github.io",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "repository": {

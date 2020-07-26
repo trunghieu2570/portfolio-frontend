@@ -18,7 +18,7 @@ module.exports = {
 		{
 			resolve: "gatsby-source-strapi",
 			options: {
-				apiURL: "http://localhost:1337",
+				apiURL: `${process.env.STRAPI_HOST}`,
 				contentTypes: [
 					// List of the Content Types you want to be able to request from Gatsby.
 					"post",
@@ -47,7 +47,7 @@ module.exports = {
 			resolve: `gatsby-source-github-api`,
 			options: {
 				// url: API URL to use. Defaults to  https://api.github.com/graphql
-				token: "c599667e4b0a527947bd9765384c2f656d69bfd6",
+				token: `${process.env.GITHUB_TOKEN}`,
 				graphQLQuery: `
 				query {
 				viewer {
