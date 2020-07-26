@@ -244,11 +244,12 @@ h3.resume-title {
 .project {
 	margin-top: 120px;
 	.project-name {
-		font-size: 32px;
+		font-size: 30px;
 		font-weight: bold;
+		text-transform: uppercase;
 	}
 	.project-case-study {
-		font-size: 20px;
+		font-size: 18px;
 		font-family: "Roboto", sans-serif;
 	}
 	.project-description {
