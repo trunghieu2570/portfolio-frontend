@@ -42,7 +42,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "deploy": "gatsby build && gh-pages -d public -r https://$GITHUB_TOKEN@github.com/trunghieu2570/trunghieu2570.github.io",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "test --passWithNoTests"
   },
   "repository": {
     "type": "git",
